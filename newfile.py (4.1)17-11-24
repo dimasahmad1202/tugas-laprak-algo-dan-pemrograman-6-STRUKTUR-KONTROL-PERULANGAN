@@ -1,0 +1,13 @@
+# Input lah jumlah pisang goreng dan harga per biji
+jumlah_pisang = int(input("Masukkan jumlah pisang goreng: "))
+harga_per_biji = int(input("Masukkan harga per biji: "))
+
+# perhitungan
+counter = 1
+
+print("\nTotal harga untuk setiap jumlah pisang dari 1 hingga", jumlah_pisang, ":")
+
+while counter <= jumlah_pisang:
+    total_harga = counter * harga_per_biji
+    print(f"Jumlah pisang: {counter}, Total harga: Rp{total_harga}")
+    counter += 1

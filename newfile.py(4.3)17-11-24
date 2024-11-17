@@ -1,0 +1,37 @@
+# kode untuk menghitung nilai  Prestasi Semester (IPS)
+
+# Konversi nilai huruf ke bobot
+def konversi_nilai(nilai):
+    if nilai == 'A':
+        return 4.0
+    elif nilai == 'B':
+        return 3.0
+    elif nilai == 'C':
+        return 2.0
+    elif nilai == 'D':
+        return 1.0
+    else:
+        return 0.0  # Untuk nilai yang tidak valid
+
+# Input jumlah mata kuliah
+jumlah_mata_kuliah = int(input("Masukkan jumlah mata kuliah: "))
+
+# Inisialisasi variabel total
+total_bobot_sks = 0
+jumlah_sks = 0
+
+# Loop untuk setiap mata kuliah
+for i in range(1, jumlah_mata_kuliah + 1):
+    nilai = input(f"Masukkan nilai mata kuliah ke-{i} (A, B, C, atau D): ").upper()
+    sks = int(input(f"Masukkan jumlah SKS mata kuliah ke-{i}: "))
+    
+    # Tambahkan total bobot dan jumlah SKS
+    total_bobot_sks += konversi_nilai(nilai) * sks
+    jumlah_sks += sks
+
+# Hitung IPS
+if jumlah_sks > 0:
+    ips = total_bobot_sks / jumlah_sks
+    print(f"\nNilai IPS Anda adalah: {ips:.2f}")
+else:
+    print("\nJumlah SKS tidak valid untuk menghitung IPS.")

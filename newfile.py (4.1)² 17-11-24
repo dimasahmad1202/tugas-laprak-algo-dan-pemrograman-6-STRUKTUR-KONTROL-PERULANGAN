@@ -1,0 +1,19 @@
+# kode untuk menghitung jumlah deret dan rerata bilangan dari 1 hingga N
+
+# Input N (batas akhir deret)
+n = int(input("\nMasukkan nilai N: "))
+
+# Inisialisasi variabel perhitungan
+counter = 1
+jumlah_total = 0
+
+while counter <= n:
+    jumlah_total += counter
+    counter += 1
+
+# Hitung rerata
+rerata = jumlah_total / n if n != 0 else 0
+
+# Tampilkan hasil
+print(f"\nJumlah total deret dari 1 hingga {n} adalah: {jumlah_total}")
+print(f"Rerata deret adalah: {rerata}")

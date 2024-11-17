@@ -1,0 +1,26 @@
+# kode untuk mencatat harga produk, menampilkan harga tinggi dan rendah
+
+harga_produk = []  # List untuk menyimpan harga produk
+
+while True:
+    try:
+        # Input harga dari pengguna
+        input_harga = input("Masukkan harga (ketik 'stop' untuk berhenti): ")
+        
+        if input_harga.lower() == 'stop':  # Cek jika input adalah 'stop'
+            break
+        
+        # Konversi input ke integer dan tambahkan ke daftar
+        harga = int(input_harga)
+        harga_produk.append(harga)
+    
+    except ValueError:
+        # Menangani kesalahan jika input bukan angka atau 'stop'
+        print("Input tidak valid. Masukkan harga atau 'stop'.")
+
+# Menampilkan hasil jika ada data yang dimasukkan
+if harga_produk:
+    print(f"\nHarga tertinggi: {max(harga_produk)}")
+    print(f"Harga terendah: {min(harga_produk)}")
+else:
+    print("\nTidak ada data harga yang dimasukkan.")
